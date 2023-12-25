@@ -30,7 +30,7 @@ nav,
 nav {
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
+  height: 65px;
 }
 
 .nav-menu {
@@ -42,14 +42,13 @@ nav {
 a {
   color: black;
   text-decoration: none;
-  text-decoration-color: white;
 }
 
 a:hover {
   color: gray;
   text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-underline-offset: 0.7rem;
+  text-decoration-color: rgb(102, 102, 102);
 }
 
 .logo {
@@ -86,59 +85,6 @@ a:hover {
   background-color: black;
   transition: all 0.3 ease-in-out;
 }
-
-.menu-link {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  width: fit-content;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3 ease-in-out;
-}
-
-.menu-link a {
-  display: block;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: black;
-  text-decoration: none;
-  transition: all 0.3 ease-in-out;
-}
-
-.menu-link li {
-  list-style: none;
-}
-
-.menu-link.open {
-  max-height: 300px;
-}
-
-.hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(10px, 5px);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
 /* Akhir Hamburger Menu */
 
 /* Section */
@@ -173,21 +119,17 @@ section {
   margin: auto 0;
 }
 
-.section__text {
+.section-text {
   align-self: center;
   text-align: center;
 }
 
-.section__text p {
+.section-text p {
   font-weight: 600;
 }
 
 .p1 {
   text-align: center;
-}
-
-.touch {
-  padding-top: 70px;
 }
 
 .p2 {
@@ -228,16 +170,6 @@ section {
   border-radius: 2rem;
 }
 
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
 .btn-color-1 {
   background: rgb(53, 53, 53);
   color: white;
@@ -245,36 +177,34 @@ section {
 
 .btn-color-1:hover {
   background: rgb(0, 0, 0);
-}
-
-.btn-container {
-  gap: 1rem;
+  cursor: pointer;
 }
 
 /* About Section */
 #about {
   margin: 25px;
+  padding: 30px;
   background-color: plum;
   position: relative;
-  padding: 30px;
   border-radius: 30px;
   padding-top: 80px;
 }
 
+.touch {
+  padding-top: 80px;
+}
+
 .about-containers {
+  display: flex;
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
 .about-details-container {
+  display: flex;
   justify-content: center;
   flex-direction: column;
-}
-
-.about-containers,
-.about-details-container {
-  display: flex;
 }
 
 .details-container {
@@ -294,7 +224,7 @@ section {
   height: 80%;
 }
 
-.section__pic-container {
+.pic-container {
   height: 400px;
   width: 400px;
   margin: auto 0;
@@ -332,13 +262,6 @@ section {
   flex-direction: column;
 }
 
-.article-container {
-  text-align: center;
-  display: inline-block;
-  text-align: initial;
-  justify-content: space-around;
-}
-
 /* Hobby Section */
 #hobby {
   padding-top: 80px;
@@ -358,12 +281,11 @@ section {
   padding-bottom: 330px;
 }
 
-.contact-info-upper-container {
+.contact-info {
   display: flex;
   justify-content: center;
-  border-radius: 2rem;
+  border-radius: 20rem;
   border: rgb(0, 0, 0) 0.1rem solid;
-  background: (250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -388,11 +310,10 @@ section {
   height: 2.5rem;
 }
 
-/* Gaya umum untuk form dan input */
+/* Form dan Input */
 .contact-person {
   max-width: 600px;
   margin: 20px auto;
-  text-align: center;
 }
 
 input[type="text"],
@@ -406,13 +327,6 @@ textarea {
   box-sizing: border-box;
 }
 
-/* Gaya untuk textarea */
-textarea {
-  resize: vertical;
-  /* Memungkinkan untuk Merubah Tinggi Textarea secara Vertikal */
-}
-
-/* Gaya untuk Tombol jika menambahkannya nantinya */
 button {
   background-color: #4caf50;
   color: white;
@@ -423,7 +337,7 @@ button {
 }
 
 .contact-submit {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* Footer Section */
@@ -437,7 +351,7 @@ footer p {
   text-align: center;
 }
 
-/* Responsive Desktop */
+/* Responsive Dekstop */
 @media screen and (max-width: 1400px) {
   #profile {
     height: 83vh;
@@ -516,11 +430,7 @@ footer p {
     margin-bottom: 0;
   }
 
-  article {
-    font-size: 1rem;
-  }
-
-  article div p {
+  div p {
     font-size: 3vw;
   }
 
@@ -545,9 +455,13 @@ footer p {
     margin: 0;
   }
 
+  .contact-info {
+    display: block;
+  }
+
   .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
+  li a {
+    font-size: 0.8rem;
   }
 
   .education-sub-title {
